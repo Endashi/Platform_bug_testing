@@ -1,7 +1,9 @@
 from http import HTTPStatus
+
 from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
 from django.test import Client, TestCase
+
 from news.forms import BAD_WORDS, WARNING
 from news.models import Comment, News
 

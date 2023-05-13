@@ -1,9 +1,10 @@
 from http import HTTPStatus
+
 from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
 from django.test import TestCase
-from news.models import Comment, News
 
+from news.models import Comment, News
 
 User = get_user_model()
 

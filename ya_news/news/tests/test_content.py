@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
+
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
@@ -17,12 +18,12 @@ class TestHomePage(TestCase):
     @classmethod
     def setUpTestData(cls):
 
-        today = datetime.today()
+        today = timezone.now()
         all_news = [
             News(
                 title=f'Новость {index}',
                 text='Просто текст.',
-                date=today - timedelta(days=index)
+                date=today - timezone.timedelta(days=index)
             )
             for index in range(settings.NEWS_COUNT_ON_HOME_PAGE + 1)
         ]
